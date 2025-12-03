@@ -1,7 +1,11 @@
+import Navbar from '../../components/layout/Navbar.jsx'
+
 function App() {
   return (
     <>
-      <div><h1 className="text-amber-300">HELLO , WORD</h1></div>
+      <header className="bg-neutral-1 p-3 px-[4%]">
+        <Navbar />
+      </header>
     </>
   )
 }
