@@ -1,5 +1,7 @@
 import Navbar from '../../components/layout/Navbar.jsx'
 import Home from '../../components/layout/Home.jsx'
+import Trending from '../../components/layout/Trending.jsx'
+
 import background from '../../assets/img/background-mobile.png'
 
 function App() {
@@ -17,6 +19,9 @@ function App() {
       >
         {/* HOME SECTION */}
         <Home />
+
+        {/* TRENDING SECTION */}
+        <Trending />
       </main>
     </>
   )
