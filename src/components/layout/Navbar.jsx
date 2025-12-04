@@ -1,57 +1,73 @@
 import imagemLogo from "../../assets/img/logo-starbucks.png";
 import { useState } from "react";
 
+const linkClass = `
+  text-neutral-8 
+  font-medium 
+  transition-all duration-300 ease-in-out
+  border-b border-transparent
+  hover:text-primary-1 hover:border-primary-1
+`;
+
 function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center">
-      <img width={"180px"} src={imagemLogo} alt="Logo Starbucks" />
+    <nav
+      className="flex justify-between items-center"
+      role="navigation"
+      aria-label="Menu principal"
+    >
+      <a href="#home" className="flex items-center">
+        <img className="w-[180px]" src={imagemLogo} alt="Logo Starbucks" />
+      </a>
 
-      <button className={`w-10  text-[1.2em]`} onClick={() => setIsOpen(!isOpen)}>
-        <i className={`fa-solid ${isOpen ? 'fa-times' : 'fa-bars'}`}></i>
+      <button
+        className="w-10 text-[1.2em] md:hidden"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Abrir/fechar menu"
+        aria-expanded={isOpen}
+        aria-controls="navbar-menu"
+      >
+        <i className={`fa-solid ${isOpen ? "fa-times" : "fa-bars"}`}></i>
       </button>
 
-      <ul className={` flex gap-1 flex-col w-full absolute top-20 bg-neutral-1 left-0 p-4 ${isOpen ? 'flex' : 'hidden'}`}>
+      <ul
+        id="navbar-menu"
+        className={`
+          text-[1.1rem]
+          w-full absolute top-20 left-0 p-4 bg-neutral-1
+          flex-col gap-1 z-50
+          ${isOpen ? "flex" : "hidden"}
+          md:static md:flex md:flex-row md:gap-4 md:w-auto md:p-0
+        `}
+      >
         <li className="text-center">
-          <a
-            className="text-neutral-8 font-mediumtransition-all duration-300 ease-in-out
-  hover:text-primary-1 hover:border-b border-primary-1"
-            href="#home"
-          >
+          <a className={linkClass} href="#home" onClick={() => setIsOpen(false)}>
             Home
           </a>
         </li>
         <li className="text-center">
-          <a
-            className="text-neutral-8 font-mediumtransition-all duration-300 ease-in-out
-  hover:text-primary-1 hover:border-b border-primary-1"
-            href="#trending"
-          >
+          <a className={linkClass} href="#trending" onClick={() => setIsOpen(false)}>
             Em Alta
           </a>
         </li>
         <li className="text-center">
-          <a
-            className="text-neutral-8 font-mediumtransition-all duration-300 ease-in-out
-  hover:text-primary-1 hover:border-b border-primary-1"
-            href="#about"
-          >
+          <a className={linkClass} href="#about" onClick={() => setIsOpen(false)}>
             Sobre Nós
           </a>
         </li>
         <li className="text-center">
-          <a
-            className="text-neutral-8 font-mediumtransition-all duration-300 ease-in-out
-  hover:text-primary-1 hover:border-b border-primary-1"
-            href="#products"
-          >
+          <a className={linkClass} href="#products" onClick={() => setIsOpen(false)}>
             Novidades
           </a>
         </li>
       </ul>
 
-      <a href="#" className="hidden">
+      <a
+        href="#contato"
+        className="bg-primary-2 hidden md:block text-neutral-0 hover:bg-primary-3 transition-all duration-300 ease-in-out px-5 cursor-pointer py-2.5 rounded-lg"
+      >
         Contatar
       </a>
     </nav>
