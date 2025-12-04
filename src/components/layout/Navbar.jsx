@@ -1,3 +1,5 @@
+import Button_Filled from "../ui/Button-filled";
+
 import imagemLogo from "../../assets/img/logo-starbucks.png";
 import { useState } from "react";
 
@@ -63,13 +65,7 @@ function Navbar() {
           </a>
         </li>
       </ul>
-
-      <a
-        href="#contato"
-        className="bg-primary-2 hidden md:block text-neutral-0 hover:bg-primary-3 transition-all duration-300 ease-in-out px-5 cursor-pointer py-2.5 rounded-lg"
-      >
-        Contatar
-      </a>
+        <Button_Filled adicionar=" hidden md:block" >Contatar</Button_Filled>
     </nav>
   );
 }
