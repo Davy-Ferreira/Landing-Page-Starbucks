@@ -8,7 +8,7 @@ function Home() {
   return (
     <section className="flex flex-col gap-3 items-center min-h-[calc(100vh-96px)] py-8 px-[4%] pt-[clamp(0px,5vw,32px)]">
       <img
-        className="md:max-w-[67%] lg:max-w-[50%] xl:max-w-[27%] 2xl:max-w-[20%] w-[clamp(300px, 50% , 400px)] "
+        className="md:max-w-[67%] lg:max-w-[50%] xl:max-w-[27%] 2xl:max-w-[30%] w-[clamp(300px, 50% , 400px)] "
         src={image}
         alt="Starbucks Drink"
       />
